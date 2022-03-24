@@ -198,10 +198,14 @@ export default {
       event.dataTransfer.setData("itemID", item.id);
     };
     const onDrop = (event, list) => {
+      console.log(list);
       const itemID = event.dataTransfer.getData("itemID");
+      console.log("itemID", itemID);
       const item = items.value.find((item) => item.id == itemID);
       item.list = list;
+      console.log("list", list);
     };
+
     return {
       getList,
       onDrop,
